@@ -30,10 +30,23 @@ const BarChart = () => {
       datasets: [
         {
           labels: "sales £",
-          data: [25457, 12546, 14524, 13458, 17458, 26541, 23541],
-          borderColor: "purple",
+          data: [23457, 12546, 14524, 20458, 17458, 26541, 23541],
+          backgroundColor: "#8A2BE2",
         },
       ],
+    });
+    setChartOptions({
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: true,
+          text: "Daily Revenue",
+        },
+      },
+      maintainAspectRatio: false,
+      responsive: true,
     });
   }, []);
 
