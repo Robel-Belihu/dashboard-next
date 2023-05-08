@@ -1,5 +1,6 @@
 import { FaThreeDotsVertical, FaShoppingBag } from "react-icons/fa";
 import { placeholderdata } from "@/data/data";
+import { BsThreeDots } from "react-icons/bs";
 const orders = () => {
   return (
     <div className="bg-gray-200 min-h-screen">
@@ -27,20 +28,23 @@ const orders = () => {
                     <p className="text-gray-700 font-sm">{order.name.first}</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <p className="text-gray-600 sm:text-left text-right">
-                    <span
-                      className={
-                        order.status == "Processing"
-                          ? "bg-orange-400 p-2 rounded-lg"
-                          : order.status == "Completed"
-                          ? "bg-green-600 text-white p-2 rounded-lg"
-                          : "bg-yellow-300 p-2 rounded-lg"
-                      }
-                    >
-                      {order.status}
-                    </span>
-                  </p>
+                <p className="text-gray-600 flex items-center sm:text-left text-right">
+                  <span
+                    className={
+                      order.status == "Processing"
+                        ? "bg-orange-400 p-2 rounded-lg"
+                        : order.status == "Completed"
+                        ? "bg-green-600 text-white p-2 rounded-lg"
+                        : "bg-yellow-300 p-2 rounded-lg"
+                    }
+                  >
+                    {order.status}
+                  </span>
+                </p>
+                <p className="hidden md:flex ">{order.date}</p>
+                <div className="sm:flex hidden justify-between items-center">
+                  <p>{order.method}</p>
+                  <BsThreeDots />
                 </div>
               </li>
             ))}
